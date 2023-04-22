@@ -54,5 +54,8 @@ export const schema = yup.object({
 		.oneOf([yup.ref('password'), null], 'Password must match'),
 	terms_and_conditions: yup
 		.bool()
-		.oneOf([true], 'You need to accept the terms and conditions')
+		.oneOf([true], 'You need to accept the terms and conditions'),
+	file_upload: yup.mixed().test('required', 'Please select a file', (value) => {
+		return value && value.length;
+	})
 });

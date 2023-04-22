@@ -167,6 +167,16 @@ const FormValidation = () => {
 			</div>
 			{errors.dev && <Error message={errors.dev.message} />}
 
+			<label className="block  mt-2 text-sm font-medium text-gray-900 ">
+				Upload file
+			</label>
+			<input
+				className="block w-full text-sm  border border-gray-300 rounded-lg cursor-pointer bg-gray-50"
+				type="file"
+				{...register('file_upload')}
+			/>
+			{errors.file_upload && <Error message={errors.file_upload.message} />}
+
 			<label>Password</label>
 			<input
 				{...register('password')}
@@ -189,7 +199,7 @@ const FormValidation = () => {
 				<input
 					{...register('terms_and_conditions')}
 					type="checkbox"
-					className="w-4 h-4 mr-1"
+					className="w-4 h-4 mr-1 rounded"
 				/>
 				<label>Accept Terms & Conditions</label>
 			</div>
