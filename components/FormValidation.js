@@ -8,6 +8,7 @@ import {
 	LockClosedIcon
 } from '@heroicons/react/24/outline';
 import Field from './elements/Field';
+import CardField from './elements/CardField';
 
 const FormValidation = () => {
 	const {
@@ -37,15 +38,14 @@ const FormValidation = () => {
 					{...register('username')}
 				/>
 			</Field>
-			<label>Email</label>
-			<input
-				className="rounded border border-neutral-300 bg-neutral-50 p-1"
-				{...register('email')}
-			/>
-			{errors.email && <Error message={errors.email.message} />}
+			<Field label="Email" error={errors.email}>
+				<input
+					className="rounded border border-neutral-300 bg-neutral-50 p-1"
+					{...register('email')}
+				/>
+			</Field>
 
-			<label className="relative w-full flex flex-col">
-				<span className="mb-1">Card number</span>
+			<CardField label="Card number" error={errors.card_number}>
 				<input
 					className="rounded-md peer pl-12 pr-2 py-2 border-2 border-gray-200 placeholder-gray-300"
 					type="text"
@@ -53,9 +53,7 @@ const FormValidation = () => {
 					placeholder="0000 0000 0000"
 					{...register('card_number')}
 				/>
-				<CreditCardIcon className="absolute bottom-0 left-0 -mb-0.5 transform translate-x-1/2 -translate-y-1/2 text-black peer-placeholder-shown:text-gray-300 h-6 w-6" />
-			</label>
-			{errors.card_number && <Error message={errors.card_number.message} />}
+			</CardField>
 
 			<label className="relative flex-1 flex flex-col">
 				<span className="mb-1">Expire date</span>
@@ -71,10 +69,7 @@ const FormValidation = () => {
 			{errors.expire_date && <Error message={errors.expire_date.message} />}
 
 			<label className="relative flex-1 flex flex-col">
-				<span className=" flex items-center gap-3 mb-1">
-					CVV
-					<span className="relative group"></span>
-				</span>
+				<span className="mb-1">CVV</span>
 
 				<input
 					className="rounded-md peer pl-12 pr-2 py-2 border-2 border-gray-200 placeholder-gray-300"
@@ -143,24 +138,21 @@ const FormValidation = () => {
 				{...register('file_upload')}
 			/>
 			{errors.file_upload && <Error message={errors.file_upload.message} />}
+			<Field label="Password" error={errors.password}>
+				<input
+					{...register('password')}
+					className="rounded border border-neutral-300 bg-neutral-50 p-1"
+					type="password"
+				/>
+			</Field>
 
-			<label>Password</label>
-			<input
-				{...register('password')}
-				className="rounded border border-neutral-300 bg-neutral-50 p-1"
-				type="password"
-			/>
-			{errors.password && <Error message={errors.password.message} />}
-
-			<label>Confirm Password</label>
-			<input
-				{...register('confirm_password')}
-				className="rounded border border-neutral-300 bg-neutral-50 p-1"
-				type="password"
-			/>
-			{errors.confirm_password && (
-				<Error message={errors.confirm_password.message} />
-			)}
+			<Field label="Confirm Password" error={errors.confirm_password}>
+				<input
+					{...register('confirm_password')}
+					className="rounded border border-neutral-300 bg-neutral-50 p-1"
+					type="password"
+				/>
+			</Field>
 
 			<div className="mt-5">
 				<input
