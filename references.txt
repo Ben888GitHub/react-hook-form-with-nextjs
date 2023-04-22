@@ -14,3 +14,12 @@ Credit Card Validation:
 - https://stackoverflow.com/questions/50758729/using-yup-to-validate-credit-card-details 
 - https://codesandbox.io/s/gvglr?file=/src/App.tsx:261-272
 - https://itecnote.com/tecnote/javascript-using-yup-to-validate-credit-card-details/
+- -
+- https://tailwindcomponents.com/component/credit-debit-card
+- https://tailwindcomponents.com/component/credit-card-form
+- https://www.npmjs.com/package/card-validator
+
+Replace SVG with usable Icons
+- https://heroicons.com/
+- https://github.com/tailwindlabs/heroicons
+- https://unpkg.com/browse/@heroicons/react@2.0.17/24/outline/

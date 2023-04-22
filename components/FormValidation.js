@@ -7,6 +7,7 @@ import {
 	CalendarDaysIcon,
 	LockClosedIcon
 } from '@heroicons/react/24/outline';
+import Field from './elements/Field';
 
 const FormValidation = () => {
 	const {
@@ -29,14 +30,13 @@ const FormValidation = () => {
 			onSubmit={handleSubmit(handleSubmitForm)}
 			className="flex flex-col gap-2 rounded-lg bg-neutral-50 p-8 text-neutral-900 shadow"
 		>
-			<label>Username</label>
-			<input
-				className="rounded border border-neutral-300 bg-neutral-50 p-1"
-				type="text"
-				{...register('username')}
-			/>
-			{errors.username && <Error message={errors.username.message} />}
-
+			<Field label="Username" error={errors.username}>
+				<input
+					className="rounded border border-neutral-300 bg-neutral-50 p-1"
+					type="text"
+					{...register('username')}
+				/>
+			</Field>
 			<label>Email</label>
 			<input
 				className="rounded border border-neutral-300 bg-neutral-50 p-1"
