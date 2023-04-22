@@ -1,0 +1,16 @@
+https://upmostly.com/next-js/how-to-build-next-level-next-js-forms-with-form-validation
+
+https://dev.to/hellodemola/handle-form-better-in-nextjs-with-react-hook-form-3o61 
+
+https://jasonwatmore.com/post/2021/09/03/next-js-form-validation-example-with-react-hook-form 
+
+https://tailwindcomponents.com/component/credit-debit-card
+
+https://tailwindcomponents.com/component/credit-card-form
+
+----------------------------------------------------------------
+
+Credit Card Validation:
+- https://stackoverflow.com/questions/50758729/using-yup-to-validate-credit-card-details 
+- https://codesandbox.io/s/gvglr?file=/src/App.tsx:261-272
+- https://itecnote.com/tecnote/javascript-using-yup-to-validate-credit-card-details/
