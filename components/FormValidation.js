@@ -2,6 +2,11 @@ import { useForm } from 'react-hook-form';
 import Error from './Error';
 import { schema } from '@/utils/form-validation';
 import { yupResolver } from '@hookform/resolvers/yup';
+import {
+	CreditCardIcon,
+	CalendarDaysIcon,
+	LockClosedIcon
+} from '@heroicons/react/24/outline';
 
 const FormValidation = () => {
 	const {
@@ -48,20 +53,7 @@ const FormValidation = () => {
 					placeholder="0000 0000 0000"
 					{...register('card_number')}
 				/>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					className="absolute bottom-0 left-0 -mb-0.5 transform translate-x-1/2 -translate-y-1/2 text-black peer-placeholder-shown:text-gray-300 h-6 w-6"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-				>
-					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						strokeWidth="2"
-						d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
-					/>
-				</svg>
+				<CreditCardIcon className="absolute bottom-0 left-0 -mb-0.5 transform translate-x-1/2 -translate-y-1/2 text-black peer-placeholder-shown:text-gray-300 h-6 w-6" />
 			</label>
 			{errors.card_number && <Error message={errors.card_number.message} />}
 
@@ -74,20 +66,7 @@ const FormValidation = () => {
 					placeholder="MM/YY"
 					{...register('expire_date')}
 				/>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					className="absolute bottom-0 left-0 -mb-0.5 transform translate-x-1/2 -translate-y-1/2 text-black peer-placeholder-shown:text-gray-300 h-6 w-6"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-				>
-					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						strokeWidth="2"
-						d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-					/>
-				</svg>
+				<CalendarDaysIcon className="absolute bottom-0 left-0 -mb-0.5 transform translate-x-1/2 -translate-y-1/2 text-black peer-placeholder-shown:text-gray-300 h-6 w-6" />
 			</label>
 			{errors.expire_date && <Error message={errors.expire_date.message} />}
 
@@ -96,6 +75,7 @@ const FormValidation = () => {
 					CVV
 					<span className="relative group"></span>
 				</span>
+
 				<input
 					className="rounded-md peer pl-12 pr-2 py-2 border-2 border-gray-200 placeholder-gray-300"
 					type="text"
@@ -103,20 +83,7 @@ const FormValidation = () => {
 					placeholder="&bull;&bull;&bull;"
 					{...register('cvv')}
 				/>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					className="absolute bottom-0 left-0 -mb-0.5 transform translate-x-1/2 -translate-y-1/2 text-black peer-placeholder-shown:text-gray-300 h-6 w-6"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-				>
-					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						strokeWidth="2"
-						d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-					/>
-				</svg>
+				<LockClosedIcon className="absolute bottom-0 left-0 -mb-0.5 transform translate-x-1/2 -translate-y-1/2 text-black peer-placeholder-shown:text-gray-300 h-6 w-6" />
 			</label>
 			{errors.cvv && <Error message={errors.cvv.message} />}
 
