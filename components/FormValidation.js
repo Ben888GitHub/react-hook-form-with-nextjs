@@ -159,7 +159,7 @@ const FormValidation = () => {
 
 			<button
 				type="button"
-				className="mt-5 rounded bg-[#6c757d] p-2 text-neutral-50"
+				className="mt-5 rounded bg-gray-500 p-2 text-neutral-50"
 				onClick={resetForm}
 			>
 				Reset

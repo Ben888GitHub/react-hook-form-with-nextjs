@@ -21,7 +21,7 @@ const CardField = ({ children, label, error }) => {
 
 	return (
 		<>
-			<label className="relative flex-1 flex flex-col">
+			<label htmlFor={label} className="relative flex-1 flex flex-col">
 				<span className="mb-1">{label}</span>
 				{children}
 				{whichIcon}
