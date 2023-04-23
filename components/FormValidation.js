@@ -34,75 +34,60 @@ const FormValidation = () => {
 			onSubmit={handleSubmit(handleSubmitForm)}
 			className="flex flex-col gap-2 rounded-lg bg-neutral-50 p-8 text-neutral-900 shadow"
 		>
-			<Field label="Username" error={errors.username} forId="username">
+			<Field label="Username" error={errors.username}>
 				<input
 					className="rounded border border-neutral-300 bg-neutral-50 p-1"
 					type="text"
 					{...register('username')}
-					id="username"
 				/>
 			</Field>
-			<Field label="Email" error={errors.email} forId="email">
+			<Field label="Email" error={errors.email}>
 				<input
 					className="rounded border border-neutral-300 bg-neutral-50 p-1"
 					{...register('email')}
-					id="email"
 				/>
 			</Field>
 
-			<CardField
-				label="Card number"
-				error={errors.card_number}
-				forId="card_number"
-			>
+			<CardField label="Card number" error={errors.card_number}>
 				<input
 					className="rounded-md peer pl-12 pr-2 py-2 border-2 border-gray-200 placeholder-gray-300"
 					name="card_number"
 					placeholder="0000 0000 0000"
 					{...register('card_number')}
-					id="card_number"
 				/>
 			</CardField>
 
-			<CardField
-				label="Expire date"
-				error={errors.expire_date}
-				forId="expire_date"
-			>
+			<CardField label="Expire date" error={errors.expire_date}>
 				<input
 					className="rounded-md peer pl-12 pr-2 py-2 border-2 border-gray-200 placeholder-gray-300"
 					name="expire_date"
 					placeholder="MM/YY"
 					{...register('expire_date')}
-					id="expire_date"
 				/>
 			</CardField>
 
-			<CardField label="CVV" error={errors.cvv} forId="cvv">
+			<CardField label="CVV" error={errors.cvv}>
 				<input
 					className="rounded-md peer pl-12 pr-2 py-2 border-2 border-gray-200 placeholder-gray-300"
 					name="cvv"
 					placeholder="&bull;&bull;&bull;"
 					{...register('cvv')}
-					id="cvv"
 				/>
 			</CardField>
 
-			<Field label="Date of Birth" error={errors.dob} forId="dob">
+			<Field label="Date of Birth" error={errors.dob}>
 				<input
 					className="rounded border border-neutral-300 bg-neutral-50 p-1"
 					type="date"
 					{...register('dob')}
-					id="dob"
 				/>
 			</Field>
 
-			<Field label="Occupation" error={errors.occupation} forId="occupation">
+			<Field label="Occupation" error={errors.occupation}>
 				<select
 					className="rounded border border-neutral-300 p-1"
 					name="occupation"
 					{...register('occupation')}
-					id="occupation"
 				>
 					{jobs.map((job, idx) => (
 						<option key={idx} value={job}>
@@ -112,7 +97,7 @@ const FormValidation = () => {
 				</select>
 			</Field>
 
-			<Field label="Developer" error={errors.dev} forId="dev">
+			<Field label="Developer" error={errors.dev}>
 				<div>
 					{isDev.map((dev, idx) => (
 						<div className="flex" key={idx}>
@@ -122,7 +107,6 @@ const FormValidation = () => {
 								name="dev"
 								value={dev}
 								className="mr-1"
-								// id="dev"
 							/>
 							<p>{dev}</p>
 						</div>
@@ -130,34 +114,27 @@ const FormValidation = () => {
 				</div>
 			</Field>
 
-			<Field label="Upload file" error={errors.file_upload} forId="file_upload">
+			<Field label="Upload file" error={errors.file_upload}>
 				<input
 					className="block w-full text-sm  border border-gray-300 rounded-lg cursor-pointer bg-gray-50"
 					type="file"
 					{...register('file_upload')}
-					id="file_upload"
 				/>
 			</Field>
 
-			<Field label="Password" error={errors.password} forId="password">
+			<Field label="Password" error={errors.password}>
 				<input
 					{...register('password')}
 					className="rounded border border-neutral-300 bg-neutral-50 p-1"
 					type="password"
-					id="password"
 				/>
 			</Field>
 
-			<Field
-				label="Confirm Password"
-				error={errors.confirm_password}
-				forId="confirm_password"
-			>
+			<Field label="Confirm Password" error={errors.confirm_password}>
 				<input
 					{...register('confirm_password')}
 					className="rounded border border-neutral-300 bg-neutral-50 p-1"
 					type="password"
-					id="confirm_password"
 				/>
 			</Field>
 
@@ -166,9 +143,8 @@ const FormValidation = () => {
 					{...register('terms_and_conditions')}
 					type="checkbox"
 					className="w-4 h-4 mr-1 rounded"
-					id="terms_and_conditions"
 				/>
-				<label htmlFor="terms_and_conditions">Accept Terms & Conditions</label>
+				<label>Accept Terms & Conditions</label>
 			</div>
 			{errors.terms_and_conditions && (
 				<Error message={errors.terms_and_conditions.message} />

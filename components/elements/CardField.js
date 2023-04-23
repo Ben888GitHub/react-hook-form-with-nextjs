@@ -10,7 +10,7 @@ const iconClassName =
 
 let whichIcon;
 
-const CardField = ({ children, label, error, forId }) => {
+const CardField = ({ children, label, error }) => {
 	if (label === 'Card number') {
 		whichIcon = <CreditCardIcon className={iconClassName} />;
 	} else if (label === 'Expire date') {
@@ -21,7 +21,7 @@ const CardField = ({ children, label, error, forId }) => {
 
 	return (
 		<>
-			<label htmlFor={forId} className="relative flex-1 flex flex-col">
+			<label className="relative flex-1 flex flex-col">
 				<span className="mb-1">{label}</span>
 				{children}
 				{whichIcon}
