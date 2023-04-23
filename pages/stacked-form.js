@@ -23,9 +23,7 @@ const StackedForm = () => {
 		<>
 			<Head>
 				<title>Stacked Form Validation</title>
-				<meta name="description" content="Utilize Form Validations" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="icon" href="/favicon.ico" />
+				<meta name="description" content="Stacked Form Validations" />
 			</Head>
 			<main className="container items-center justify-between mx-auto">
 				<form
